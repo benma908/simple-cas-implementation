@@ -4,7 +4,7 @@
 
 ## It is based major on some frameworks as following:
 
-  - Spring 
+  - Spring
   - Spring MVC
   - Jedis
   - Apache Http Components (To ticket validate)
