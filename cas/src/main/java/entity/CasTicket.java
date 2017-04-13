@@ -1,3 +1,5 @@
+package entity;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -15,6 +17,26 @@ public class CasTicket implements Serializable {
     private Boolean rememberMe = Boolean.FALSE;
     private Date expireTime;
     private String errorMsg;
+
+    public CasTicket() {
+    }
+
+    private CasTicket(String id, String domainName, Long memberId, String tgtId) {
+        this.id = id;
+        this.domainName = domainName;
+        this.memberId = memberId;
+        this.tgtId = tgtId;
+    }
+
+    public CasTicket(String id, String domainName, Long memberId, String tgtId, String qqOpenid, String memberName) {
+        this(id, domainName, memberId, tgtId, qqOpenid);
+        this.memberName = memberName;
+    }
+
+    public CasTicket(String id, String domainName, Long memberId, String tgtId, String qqOpenid) {
+        this(id, domainName, memberId, tgtId);
+        this.qqOpenid = qqOpenid;
+    }
 
     public Date getExpireTime() {
         return expireTime;
@@ -96,29 +118,9 @@ public class CasTicket implements Serializable {
         this.memberName = memberName;
     }
 
-    public CasTicket() {
-    }
-
-    private CasTicket(String id, String domainName, Long memberId, String tgtId) {
-        this.id = id;
-        this.domainName = domainName;
-        this.memberId = memberId;
-        this.tgtId = tgtId;
-    }
-
-    public CasTicket(String id, String domainName, Long memberId, String tgtId, String qqOpenid, String memberName) {
-        this(id, domainName, memberId, tgtId, qqOpenid);
-        this.memberName = memberName;
-    }
-
-    public CasTicket(String id, String domainName, Long memberId, String tgtId, String qqOpenid) {
-        this(id, domainName, memberId, tgtId);
-        this.qqOpenid = qqOpenid;
-    }
-
     @Override
     public String toString() {
-        return "CasTicket{" +
+        return "entity.CasTicket{" +
                 "id='" + id + '\'' +
                 ", domainName='" + domainName + '\'' +
                 ", memberId=" + memberId +

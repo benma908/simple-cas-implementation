@@ -1,3 +1,5 @@
+package entity.vo;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 import java.io.Serializable;
@@ -21,7 +23,7 @@ public class CasLoginVo implements Serializable {
 
     @Override
     public String toString() {
-        return "CasLoginVo{" +
+        return "entity.vo.CasLoginVo{" +
                 "principal='" + principal + '\'' +
                 ", password='" + password + '\'' +
                 ", rememberMe=" + rememberMe +
