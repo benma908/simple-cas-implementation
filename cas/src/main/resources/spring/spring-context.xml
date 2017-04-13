@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/context   
+          http://www.springframework.org/schema/context/spring-context.xsd
+        ">
+
+
+    <!-- 采用注释的方式配置bean -->
+    <context:annotation-config/>
+    <context:component-scan base-package="controller,session"/>
+
+    <!-- Session实例化 -->
+    <bean id="sessionProvider" class="session.CacheSessionProvider">
+        <property name="expiry" value="30"/>
+        <property name="cookie_token" value="_cas_sid"/>
+        <property name="expirationUpdateInterval" value="5"/>
+        <property name="session_domain" value="session_domain:"/>
+    </bean>
+
+</beans>
